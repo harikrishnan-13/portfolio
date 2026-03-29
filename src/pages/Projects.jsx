@@ -62,33 +62,33 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen px-6 py-12 text-white relative overflow-hidden">
+    <div className="min-h-screen px-4 sm:px-6 py-10 sm:py-12 text-white relative overflow-hidden">
 
       {/* Background Glow */}
-      <div className="pointer-events-none absolute w-96 h-96 bg-blue-500/20 blur-3xl rounded-full top-10 left-10"></div>
-      <div className="pointer-events-none absolute w-96 h-96 bg-purple-500/20 blur-3xl rounded-full bottom-10 right-10"></div>
+      <div className="pointer-events-none absolute w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/20 blur-3xl rounded-full top-10 left-5 sm:left-10"></div>
+      <div className="pointer-events-none absolute w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/20 blur-3xl rounded-full bottom-10 right-5 sm:right-10"></div>
 
       {/* Header */}
       <motion.div
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-10 sm:mb-16 relative z-10"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Projects
         </h1>
-        <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        <p className="text-gray-400 mt-3 sm:mt-4 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base">
           Real-world systems across Telecom, FinTech, Supply Chain & Enterprise domains
         </p>
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
 
         {projects.map((proj, index) => (
           <motion.div
             key={index}
-            className="bg-white/5 backdrop-blur-xl border border-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition"
+            className="bg-white/5 backdrop-blur-xl border border-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
@@ -96,30 +96,30 @@ export default function Projects() {
           >
 
             {/* Title */}
-            <h2 className="text-xl font-semibold flex items-center gap-2">
-              <FaProjectDiagram className="text-blue-400" />
+            <h2 className="text-lg sm:text-xl font-semibold flex items-start sm:items-center gap-2">
+              <FaProjectDiagram className="text-blue-400 mt-1 sm:mt-0" />
               {proj.title}
             </h2>
 
             {/* Domain */}
-            <p className="text-blue-400 mt-1 flex items-center gap-2">
-              <FaUserCog /> {proj.domain}
+            <p className="text-blue-400 mt-1 flex items-start sm:items-center gap-2 text-sm sm:text-base">
+              <FaUserCog className="mt-1 sm:mt-0" /> {proj.domain}
             </p>
 
             {/* Description */}
-            <p className="text-gray-400 mt-3 leading-relaxed">
+            <p className="text-gray-400 mt-3 leading-relaxed text-sm sm:text-base">
               {proj.description}
             </p>
 
             {/* Highlights */}
-            <ul className="mt-5 space-y-2">
+            <ul className="mt-4 sm:mt-5 space-y-2">
               {proj.highlights.map((item, i) => (
                 <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-2 text-gray-300 text-sm"
+                  className="flex items-start gap-2 text-gray-300 text-xs sm:text-sm"
                 >
                   <FaCheckCircle className="text-green-400 mt-1" />
                   <span>{item}</span>
@@ -129,7 +129,7 @@ export default function Projects() {
 
             {/* Impact Footer */}
             <motion.div
-              className="mt-4 text-sm text-purple-400 flex items-center gap-2"
+              className="mt-4 text-xs sm:text-sm text-purple-400 flex items-center gap-2"
               animate={{ opacity: [0.6, 1, 0.6] }}
               transition={{ repeat: Infinity, duration: 2 }}
             >

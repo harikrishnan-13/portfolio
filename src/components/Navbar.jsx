@@ -12,11 +12,21 @@ import {
   FaTimes,
   FaFileDownload
 } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+
+  // 🔥 Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  // 🔥 Prevent background scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
 
   const navItems = [
     { name: "Home", path: "/", icon: <FaHome /> },
@@ -49,7 +59,9 @@ export default function Navbar() {
       <div className="hidden md:flex gap-6 items-center">
 
         {navItems.map((item, index) => {
-          const isActive = location.pathname === item.path;
+          const isActive =
+            location.pathname === item.path ||
+            location.pathname.startsWith(item.path);
 
           return (
             <Link
@@ -80,7 +92,10 @@ export default function Navbar() {
 
       {/* 🔥 Mobile Toggle */}
       <div className="md:hidden">
-        <button onClick={() => setOpen(!open)}>
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle Menu"
+        >
           {open ? <FaTimes size={22} /> : <FaBars size={22} />}
         </button>
       </div>
@@ -98,7 +113,6 @@ export default function Navbar() {
               <Link
                 key={index}
                 to={item.path}
-                onClick={() => setOpen(false)}
                 className="flex items-center gap-3 text-lg text-gray-300 hover:text-blue-400 transition"
               >
                 {item.icon}
@@ -108,7 +122,7 @@ export default function Navbar() {
 
             {/* Resume in Mobile */}
             <a
-              href="/resume.pdf"
+              href="/HarikrishnanB_2024_SVCET_Resume.pdf"
               download
               className="mt-4 px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center gap-2"
             >
