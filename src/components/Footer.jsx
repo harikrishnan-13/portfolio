@@ -65,7 +65,7 @@ export default function Footer() {
               },
               {
                 icon: <FaLinkedin />,
-                link: "https://www.linkedin.com/in/hari-krishnan-b-70b2951ab/",
+                link: "https://www.linkedin.com/in/harikrishnan-b-70b2951ab/",
               },
               {
                 icon: <FaEnvelope />,
