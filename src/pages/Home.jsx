@@ -107,7 +107,7 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 text-center">
             {[
-              { value: "2.5+", label: "Years Exp" },
+              { value: "3+", label: "Years Exp" },
               { value: "10+", label: "APIs Built" },
               { value: "4+", label: "Projects" },
             ].map((item, i) => (
