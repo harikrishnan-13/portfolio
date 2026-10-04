@@ -13,7 +13,7 @@ export default function Experience() {
   const experiences = [
     {
       company: "Captiv Techno Solutions",
-      role: "Associate Software Developer",
+      role: "Software Developer",
       duration: "Nov 2024 - Present",
       location: "Chennai, India",
       project: "HRMS System + Ongoing Enterprise Projects",
