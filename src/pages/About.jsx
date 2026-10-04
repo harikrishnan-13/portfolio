@@ -51,7 +51,7 @@ export default function About() {
         <div className="flex items-start gap-3 sm:gap-4">
           <FaUser className="text-blue-400 text-xl sm:text-2xl mt-1" />
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-            Hi, I'm <span className="text-blue-400 font-semibold">Hari Krishnan</span>, a <span className="text-blue-400">FinTech Engineer</span> with 2.5+ years of experience building enterprise-grade applications.
+            Hi, I'm <span className="text-blue-400 font-semibold">Hari Krishnan</span>, a <span className="text-blue-400">FinTech Engineer</span> with 3+ years of experience building enterprise-grade applications.
           </p>
         </div>
 
